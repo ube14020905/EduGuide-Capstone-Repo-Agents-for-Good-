@@ -15,6 +15,23 @@ EduGuide is a lightweight multi-agent tutoring system designed for low-resource 
 - Observability: structured logging and a metrics endpoint stub.
 - Evaluation: pre/post test protocol and A/B testing design (described below).
 
+## Repo Structure
+eduguide-capstone/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── orchestrator.py
+├── planner_agent.py
+├── tutor_agent.py
+├── llm_client.py
+├── memory.py
+├── utils.py
+├── notebooks/
+│ └── demo_notebook.md
+└── diagrams/
+└── architecture.mmd
 
 ## Quick start (local, dev)
 
