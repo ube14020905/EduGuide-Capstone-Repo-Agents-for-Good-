@@ -1,0 +1,36 @@
+
+---
+
+# ✅ `diagrams/architecture.mmd`
+
+```mermaid
+flowchart TD
+
+  subgraph UserFacing
+    A[Teacher Dashboard / Student UI]
+  end
+
+  subgraph Agents
+    B[Planner Agent]
+    C[Tutor Agent]
+    F[Evaluator Agent]
+  end
+
+  subgraph Tools
+    E[Retriever / RAG / Context Fetch]
+  end
+
+  subgraph Memory
+    D[Memory Bank]
+    G[Metrics + Logs]
+  end
+
+  A -->|Start Session| B
+  B -->|Lesson Plan| C
+  C -->|Context Query| D
+  C -->|Fetch Knowledge| E
+  C -->|Deliver Quiz & Lesson| A
+  A -->|Submit Answers| C
+  C --> F
+  F --> D
+  F --> G
