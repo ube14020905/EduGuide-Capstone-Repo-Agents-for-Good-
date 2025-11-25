@@ -42,4 +42,13 @@ eduguide-capstone/
 ```bash
 python -m venv venv
 source venv/bin/activate # Windows: venv\\Scripts\\activate
-pip install -r requirements.txt
+pip install -r requirements.txt 
+```
+2.Run the orchestrator
+```bash
+export EDUGUIDE_MODEL=mock    # set to 'mock' for local dev; replace with 'gemini' or 'openai' when configured
+uvicorn orchestrator:app --reload --port 8000
+```
+3.Start a session (example using curl)
+```bash
+curl -X POST http://localhost:8000/start_session -H "Content-Type: application/json" -d '{"student_id":"alice","topic":"fractions"}'
